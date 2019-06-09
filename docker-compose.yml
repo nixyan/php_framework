@@ -4,7 +4,7 @@ services:
     container_name: php-apache
     build:
       context: .
-      dockerfile: ./web/Dockerfile
+      dockerfile: ./docker/web/Dockerfile
     volumes:
       - .:/var/www/html
     environment:
@@ -20,6 +20,6 @@ services:
     container_name: mysql
     image: mysql:5.7
     volumes:
-      - ./db/data:/var/lib/mysql
+      - ./docker/db/data:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=passw0rd

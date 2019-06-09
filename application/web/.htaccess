@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+  # どんなURLもindex.phpにアクセスする
+  # https://example.com/list とアクセスした場合に、
+  # https://example.com/index.php/list にアクセスしたのとほぼ同じ状態
+  RewriteEngin On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
