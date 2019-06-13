@@ -1,4 +1,8 @@
 <?php
+/**
+ * Router
+ * Requestで得たURLから各パラメータの配列を生成する
+ */
 
 class Router
 {

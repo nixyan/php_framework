@@ -1,4 +1,8 @@
 <?php
+/**
+ * Request
+ * HTTPリクエストの値を取得する
+ */
 
 class Request
 {
