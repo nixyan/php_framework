@@ -7,7 +7,6 @@ class Request
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       return true;
     }
-
     return false;
   }
 
@@ -16,7 +15,6 @@ class Request
     if (isset($_GET[$name])) {
       return $_GET[$name];
     }
-
     return $default;
   }
 
@@ -25,7 +23,6 @@ class Request
     if (isset($_POST[$name])) {
       return $_POST[$name];
     }
-
     return $default;
   }
 
@@ -34,7 +31,6 @@ class Request
     if (!empty($_SERVER['HTTP_HOST'])) {
       return $_SERVER['HTTP_HOST'];
     }
-
     return $_SERVER['SERVER_NAME'];
   }
 
@@ -43,7 +39,6 @@ class Request
     if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
       return true;
     }
-
     return false;
   }
 
