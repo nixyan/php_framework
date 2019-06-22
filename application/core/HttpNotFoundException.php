@@ -4,7 +4,7 @@
  * 例外
  */
 
-class HttpNotFoundException extends HttpNotFoundException
+class HttpNotFoundException extends Exception
 {
 }
 

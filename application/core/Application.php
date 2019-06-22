@@ -13,6 +13,7 @@ abstract class Application
   protected $response; //Responseクラスのインスタンスを格納
   protected $session; //Sessionクラスのインスタンスを格納
   protected $db_manager; //DbManagerクラスのインスタンスを格納
+  protected $login_action = [];
 
   public function __construct($debug = false)
   {
@@ -125,6 +126,11 @@ abstract class Application
     //404エラーページ
     } catch (HttpNotFoundException $e) {
       $this->render404Page($e);
+
+    //ログインが必要な場合、ログインページ
+    } catch (UnauthorizedActionException $e) {
+      list($controller, $action) = $this->login_action;
+      $this->runAction($controller, $action);
     }
   
     $this->response->send();
